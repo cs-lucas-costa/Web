@@ -1,0 +1,17 @@
+.titleBody {
+	color: #50FF62;
+	font-size: 18;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	text-align: center
+}
+
+body {
+	background-color: #0913FF
+}
+
+.buttonColor {
+	width: 200;
+	height: 50;
+	font-size: 16px;
+	border: solid;
+}
