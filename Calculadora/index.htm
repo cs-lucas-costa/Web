@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div id="view">
+		<h1 id="title">Calculadora</h1>
+		<div class="numbers">
+			<h3>Digite o primeiro número:</h3>
+			<input type="number" id="firstNumber">
+		</div>
+		<div class="numbers">
+			<h3>Digite o segundo número:</h3>
+			<input type="number" id="secondNumber">
+		</div>
+		<div>
+			<h3>Resultado</h3>
+			<label id="result">0</label>
+		</div>
+		<div id="math">
+			<button class="operators" onclick="mathOperation(operators.SUM)">+</button>
+			<button class="operators" onclick="mathOperation(operators.SUBTRACT)">-</button>
+			<button class="operators" onclick="mathOperation(operators.DIVIDE)">/</button>
+			<button class="operators" onclick="mathOperation(operators.MULTIPLY)">*</button>
+		</div>
+	</div>
+</body>
+</html>
