@@ -1,0 +1,28 @@
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table {
+	width: 50%;
+	margin: auto;
+}
+
+th, td {
+	padding: 15px;
+}
+
+td#price {
+	text-align: right;
+}
+
+caption {
+	text-align: left;
+	font-size: 30px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande Bold", sans-serif;
+	margin: 10px;
+}
+
+body {
+	background-image: url("background.png");
+}
