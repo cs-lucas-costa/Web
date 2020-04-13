@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
- <jsp:useBean id="carBO" class="br.com.Locadora.model.bo.CarBO"/>
+ <jsp:useBean id="homeController" class="br.com.Locadora.controller.HomeController"/>
     
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 </head>
 <body>
 	<ul class="list-group list-group-flush">
-		<c:forEach var="car" items="${carBO.getAllCars()}">
+		<c:forEach var="car" items="${homeController.cars}">
 			<li class="list-group-item">${car.fabricante} - ${car.nome}
 				<span class="pull-right">
 					<label>
