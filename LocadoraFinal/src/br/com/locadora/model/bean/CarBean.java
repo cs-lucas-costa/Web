@@ -23,7 +23,7 @@ public class CarBean {
 		
 	@Column(name="disponibilidade")
 	private boolean disponivel;
-	
+			
 	//MARK:- Methods
 	public String getFabricante() {
 		return fabricante;
@@ -73,14 +73,9 @@ public class CarBean {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public void setUrlImage(String urlImage) {
 		this.urlImage = urlImage;
 	}
-
 	
 	
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Loccars - Automóveis</title>
+<title>Loccars</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">

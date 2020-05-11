@@ -28,7 +28,7 @@ public class DatabaseManager {
 	}
 	
 	
-	public <T>T select(String table, String id, Class<T> object) {
+	public <T>T select(String table, int id, Class<T> object) {
 			
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
 		EntityManager manager = factory.createEntityManager();
@@ -45,7 +45,23 @@ public class DatabaseManager {
 		return user;
 	}
 	
-
+	public <T>T select(String table, String id, Class<T> object) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
+		EntityManager manager = factory.createEntityManager();
+		
+		manager.getTransaction().begin();
+		
+		T user = manager.find(object, id);
+		
+		manager.getTransaction().commit();
+		
+		manager.close();
+		factory.close();
+		
+		return user;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public <T>List<T> selectAll(String table) {
 		
@@ -79,25 +95,33 @@ public class DatabaseManager {
 		return true;
 	}
 	
-	public<T> boolean update(String table, String column, String predicate) {
+	public<T> boolean update(String table, T object) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
 		EntityManager manager = factory.createEntityManager();
 		
-		String query = "Update " + table + " SET " + column + " WHERE " + predicate;
-		System.out.println(query);
-		
 		manager.getTransaction().begin();
-		manager.createQuery(query).executeUpdate();
+		manager.merge(object);
 		manager.getTransaction().commit();
 		
 		manager.close();
 		factory.close();
 		
 		return true;
-		
 	}
 	
-	
+	public <T>void delete(String table, int id, Class<T> object) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);
+		EntityManager manager = factory.createEntityManager();
+		
+		manager.getTransaction().begin();
+		T user = manager.find(object, id);
+		manager.remove(user);
+		manager.getTransaction().commit();
+		
+		manager.close();
+		factory.close();
+	}
 
 }

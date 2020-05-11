@@ -20,11 +20,6 @@ public class CarDAO implements ObjectDAO<CarBean> {
 		return null;
 	}
 
-	@Override
-	public CarBean fetchId(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public List<CarBean> fetchAll() {
@@ -33,12 +28,16 @@ public class CarDAO implements ObjectDAO<CarBean> {
 
 	@Override
 	public boolean update(CarBean object) {
-		return dbmanager.update("Carro", "disponibilidade=false", "id = " + object.getId());
+		return dbmanager.update("Carro", object);
 	}
 
 	@Override
 	public boolean create(CarBean object) {
 		return dbmanager.insert(object, "Carro");
+	}
+	
+	public void delete(int id) {
+		dbmanager.delete("Carro", id, CarBean.class);
 	}
 	
 }

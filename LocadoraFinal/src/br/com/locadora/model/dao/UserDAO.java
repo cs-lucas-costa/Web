@@ -24,11 +24,6 @@ public class UserDAO implements ObjectDAO<UserBean>{
 	}
 	
 	@Override
-	public UserBean fetchId(int id) {
-		return null;
-	}
-	
-	@Override
 	public List<UserBean> fetchAll() {
 		return null;
 	}
