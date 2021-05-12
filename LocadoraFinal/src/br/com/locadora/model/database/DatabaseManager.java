@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 
 import br.com.locadora.model.bean.UserBean;
 
+// Alterando o arquivo
 public class DatabaseManager {
 	
 	public static DatabaseManager dbManager = null;
